@@ -32,4 +32,14 @@ Back-end:
 dotnet run
 ```
 
+## 🧪 Testando a API
+
+Para facilitar os testes dos endpoints, o projeto utiliza o **Swagger**.
+
+Após iniciar a API, acesse:
+
+```text
+[http://localhost:{porta}/swagger/index.html]
+```
+
 > **Importante:** Não se esqueça de instalar todas as dependências antes de executar o projeto.
