@@ -1,6 +1,6 @@
 # Olá! 👋
 
-Seja bem-vindo(a) ao meu pequeno projeto! Espero que ele seja útil para você. 😄
+Seja bem-vindo(a) ao meu pequeno projeto!😄 
 
 ## 🚀 Antes de começar
 
