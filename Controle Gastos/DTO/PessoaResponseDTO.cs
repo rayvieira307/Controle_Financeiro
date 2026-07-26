@@ -1,5 +1,6 @@
 namespace ControleGastos.DTOs;
 
+//informações de saida
 public class PessoaResponseDTO
 {
     public int Id { get; set; }

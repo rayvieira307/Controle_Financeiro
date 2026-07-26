@@ -1,5 +1,6 @@
 namespace ControleGastos.DTOs;
 
+//total de receitas, despesas e saldo do usuário
 public class TotalDTO
 {
     public string Nome { get; set; } = string.Empty;

@@ -2,6 +2,7 @@ using ControleGastos.Models;
 
 namespace ControleGastos.DTOs;
 
+//informações de saida da transação
 public class TransacaoResponseDTO
 {
     public int Id { get; set; }

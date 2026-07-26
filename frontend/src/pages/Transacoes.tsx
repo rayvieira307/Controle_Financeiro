@@ -5,9 +5,16 @@ import TotaisTable from "../components/TotaisTable";
 import "../styles/Transacao.css";
 
 export default function Transacoes() {
+  // Recupera os dados da pessoa enviados pela página de cadastro.
+
   const { state } = useLocation();
+
+  // Controla a atualização do componente de totais sempre que
+  // uma nova transação é cadastrada.
   const [refreshKey, setRefreshKey] = useState(0);
 
+  // Incrementa a chave de atualização para forçar o componente
+  // TotaisTable a buscar novamente os dados da API.
   function handleTransacaoCadastrada() {
     setRefreshKey((value) => value + 1);
   }
@@ -30,7 +37,6 @@ export default function Transacoes() {
             visual, clara e organizada.
           </p>
         </div>
-
         {state ? (
           <aside className="usuario-card">
             <p className="usuario-label">Perfil selecionado</p>
@@ -45,7 +51,6 @@ export default function Transacoes() {
           </aside>
         )}
       </header>
-
       <section
         className="dashboard-grid"
         aria-label="Painel de transações e totais"
@@ -61,3 +66,6 @@ export default function Transacoes() {
     </main>
   );
 }
+//// Exibe os dados da pessoa recebida da tela anterior.
+// Tabela que exibe o resumo financeiro atualiza sempre que "refreshKey" muda.
+// Sempre que "refreshKey" muda, os dados são buscados novamente na API.

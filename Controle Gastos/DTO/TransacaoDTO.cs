@@ -1,5 +1,7 @@
 using ControleGastos.Models;
 
+//cadastro da transação
+
 namespace ControleGastos.DTOs;
 
 public class TransacaoDTO

@@ -8,13 +8,16 @@ import "../styles/PessoaForm.css";
 export default function PessoaForm() {
   const navigate = useNavigate();
 
+
+  // Estado que armazena os dados da pessoa preenchidos no formulário.
   const [pessoa, setPessoa] = useState<Pessoa>({
     id: 0,
     nome: "",
     idade: 0,
   });
 
-  // Envia os dados da pessoa para a API e redireciona para a página de transações.
+// Envia os dados da pessoa para a API e, após o cadastro,
+// e manda para a tela de transações.
   async function cadastrarPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -36,19 +39,20 @@ export default function PessoaForm() {
       <h2 id="pessoa-form-title">FAÇA SEU CADASTRO AQUI</h2>
 
       <form onSubmit={cadastrarPessoa}>
-        {/* Campo para o nome da pessoa. */}
+        {/* Formulário responsável por coletar as informações da pessoa.. */
         <div className="campo">
           <label htmlFor="nome">Nome</label>
           <input
             id="nome"
             type="text"
             value={pessoa.nome}
+            // Atualiza o nome da pessoa sempre que o usuário digita.
             onChange={(e) => setPessoa({ ...pessoa, nome: e.target.value })}
             required
           />
         </div>
 
-        {/* Campo para a idade, usado para validar as regras do sistema. */}
+        /* Campo para a idade, usado para validar as regras do sistema. */}
         <div className="campo">
           <label htmlFor="idade">Idade</label>
           <input

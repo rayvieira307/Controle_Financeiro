@@ -90,7 +90,7 @@ public class PessoaService
 
 
     // Exclui uma pessoa.
-    // As transações relacionadas são removidas pelo Cascade Delete.
+    // As transações relacionadas são removidas pelo Cascade Delete que remove todas as transações relacionadas à pessoa.
     public async Task<bool> ExcluirAsync(int id)
     {
         var pessoa = await _context.Pessoas.FindAsync(id);

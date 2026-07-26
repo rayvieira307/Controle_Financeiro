@@ -20,6 +20,8 @@ interface TotaisResponse {
   saldoLiquido: number;
 }
 
+// Estados responsáveis por armazenar os dados retornados pela API
+// e controlar o carregamento da tela.
 export default function TotaisTable({ refreshKey = 0 }: TotaisTableProps) {
   const [dados, setDados] = useState<TotaisResponse>({
     pessoas: [],
@@ -30,6 +32,8 @@ export default function TotaisTable({ refreshKey = 0 }: TotaisTableProps) {
 
   const [loading, setLoading] = useState(true);
 
+  // Executa a busca dos dados denovo sempre que o componente é montado
+  // ou quando o valor de refreshKey é alterado.
   useEffect(() => {
     setLoading(true);
     buscarTotais();
@@ -47,10 +51,16 @@ export default function TotaisTable({ refreshKey = 0 }: TotaisTableProps) {
     }
   }
 
+  // Exibe uma mensagem de carregamento até que os dados
+  // sejam obtidos da API.
+  if (loading) {
+    return <p>Carregando totais...</p>;
+  }
   if (loading) {
     return <p>Carregando totais...</p>;
   }
 
+  // Formata valores numéricos para o padrão brasileiro.
   const formatCurrency = (value: number) =>
     value.toLocaleString("pt-BR", {
       style: "currency",
@@ -122,3 +132,6 @@ export default function TotaisTable({ refreshKey = 0 }: TotaisTableProps) {
     </section>
   );
 }
+
+// Rodapé da tabela com a soma geral das receitas,
+// despesas e saldo líquido.

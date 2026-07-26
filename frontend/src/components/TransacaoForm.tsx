@@ -11,6 +11,7 @@ interface TransacaoFormProps {
 export default function TransacaoForm({
   onTransacaoCadastrada,
 }: TransacaoFormProps) {
+  // Armazena a lista de pessoas cadastradas.
   const [pessoas, setPessoas] = useState<Pessoa[]>([]);
 
   const [transacao, setTransacao] = useState<Transacao>({
@@ -19,7 +20,7 @@ export default function TransacaoForm({
     tipo: TipoTransacao.Despesa,
     pessoaId: 0,
   });
-
+  // Carrega as pessoas cadastradas quando o componente é montado.
   useEffect(() => {
     carregarPessoas();
   }, []);
@@ -58,6 +59,7 @@ export default function TransacaoForm({
     (pessoa) => pessoa.id === transacao.pessoaId,
   );
 
+  // Verifica se a pessoa selecionada é menor de idade.
   const menorDeIdade =
     pessoaSelecionada?.idade !== undefined && pessoaSelecionada.idade < 18;
 
@@ -134,7 +136,7 @@ export default function TransacaoForm({
           />
         </div>
 
-        {/* Tipo da transação, com regra específica para menores de idade. */}
+        {/* Tipo da transação, com regra específica para menores de idade. So aparece o campo despesa para selecionar */}
         <div className="campo">
           <label htmlFor="tipo">Tipo</label>
           <select

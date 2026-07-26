@@ -1,5 +1,6 @@
 namespace ControleGastos.DTOs;
 
+//de cadastro 
 public class PessoaDTO
 {
     public int Id { get; set; }

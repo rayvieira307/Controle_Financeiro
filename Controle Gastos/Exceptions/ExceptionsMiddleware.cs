@@ -1,3 +1,6 @@
+
+
+
 using System.Net;
 using System.Text.Json;
 
@@ -5,6 +8,8 @@ namespace ControleGastos.Exceptions;
 
 public class ExceptionMiddleware
 {
+    // Dependência responsável por encaminhar a requisição
+    // para o próximo middleware da aplicação.
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionMiddleware> _logger;
 
@@ -32,7 +37,8 @@ public class ExceptionMiddleware
         }
     }
 
-
+     // Trata as exceções capturadas e retorna uma resposta
+     // padronizada no formato JSON.
     private static async Task HandleExceptionAsync(
         HttpContext context,
         Exception exception)

@@ -45,7 +45,7 @@ public async Task<List<TransacaoResponseDTO>> ListarAsync()
         }
 
         // Regra de negócio
-        // Menores de idade podem possuir apenas despesas.
+        // Menores de idade pode cadastrar  apenas despesas.
         if (pessoa.Idade < 18 &&
             dto.Tipo == TipoTransacao.Receita)
         {
