@@ -1,0 +1,114 @@
+.totais {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.totais header {
+  margin-bottom: 16px;
+}
+
+.totais h2 {
+  margin: 0;
+  color: #151a25;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 12px 0 20px 0;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  width: min(740px, 100%);
+}
+
+/* Estilo para os cards de resumo financeiro */
+.summary-card {
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  height: 100px;
+  width: 100%;
+  max-width: 220px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.summary-card .summary-label {
+  display: block;
+  color: #345d98;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-card strong {
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.summary-card.positive strong {
+  color: #0e958a;
+}
+/*se o valor do saldo liquido for negativo, a cor do texto será vermelha*/
+.summary-card.negative strong {
+  color: #dc2626;
+}
+
+.totais table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.totais th,
+.totais td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.totais th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+
+.totais tbody tr:hover {
+  background: #f8fbff;
+}
+
+.totais thead {
+  background-color: #f8fafc;
+}
+
+.totais tfoot {
+  background-color: #f8fafc;
+  font-weight: 700;
+}
+
+@media (max-width: 780px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
